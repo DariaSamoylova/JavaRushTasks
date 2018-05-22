@@ -1,0 +1,34 @@
+package com.javarush.task.task38.task3802;
+
+/* 
+Проверяемые исключения (checked exception)
+*/
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+public class VeryComplexClass {
+    public void veryComplexMethod() throws Exception {
+        //напишите тут ваш код
+        BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream("sdf")));
+
+
+        r.close();
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+/*Проверяемые исключения (checked exception)
+Напиши реализацию метода veryComplexMethod().
+Он должен всегда кидать какое-нибудь проверяемое исключение.
+Кинуть исключение (throw) явно нельзя.
+
+
+Требования:
+1. Метод veryComplexMethod класса veryComplexClass не должен использовать ключевое слово throw.
+2. Метод veryComplexMethod класса veryComplexClass должен бросать исключение.
+3. Брошенное исключение НЕ должно быть исключением времени выполнения(RuntimeException).
+4. Метод veryComplexMethod не должен быть приватным.*/
