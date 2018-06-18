@@ -2,6 +2,8 @@ package com.javarush.task.task27.task2712.kitchen;
 
 import com.javarush.task.task27.task2712.ConsoleHelper;
 import com.javarush.task.task27.task2712.Tablet;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.CookedOrderEventDataRow;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,12 +13,18 @@ import java.util.List;
  */
 public class Order {
     private final Tablet tablet ;
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
     protected List<Dish> dishes  ;
 
 
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
         dishes= ConsoleHelper.getAllDishesForOrder();
+
     }
 
     @Override
@@ -48,5 +56,5 @@ public class Order {
 }
 /*4. Перепиши метод toString в классе Order. Пусть он возвращает пустую строку, если нет блюд в заказе, иначе вывод должен быть аналогичным примеру в порядке добавления блюд. Используй ConsoleHelper.
 Также измени метод toString в классе Tablet (внутри класса Tablet нажмите Alt+Insert -> toString()).
-
+Добавь геттер для поля dishes в класс Order, используйте его при создании события.
 Your order: [Juice, Fish] of Tablet{number=5}*/

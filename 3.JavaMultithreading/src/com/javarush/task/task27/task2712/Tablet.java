@@ -4,6 +4,8 @@ import com.javarush.task.task27.task2712.ad.AdvertisementManager;
 import com.javarush.task.task27.task2712.ad.NoVideoAvailableException;
 import com.javarush.task.task27.task2712.kitchen.Dish;
 import com.javarush.task.task27.task2712.kitchen.Order;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
 import java.io.IOException;
 import java.util.Observable;
@@ -35,6 +37,7 @@ private static Logger logger = Logger.getLogger(Tablet.class.getName());
               setChanged();
               notifyObservers(order);
               AdvertisementManager advertisementManager = new AdvertisementManager(order.getTotalCookingTime()*60);
+           //   StatisticManager.getInstance().register(new VideoSelectedEventDataRow());
               advertisementManager.processVideos();
           }
       } catch (IOException e) {

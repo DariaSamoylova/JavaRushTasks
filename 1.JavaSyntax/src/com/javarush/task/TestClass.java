@@ -21,13 +21,22 @@ public class TestClass  {
         static Session getMailSession;
         static MimeMessage generateMailMessage;
       public static void main(String args[]) throws AddressException, MessagingException {
-        byte i = 7;
-        int qq = ~3;
-        Integer g = 6;
-        TreeSet<?> d = new TreeSet();
 
 
-            System.out.println(0./0==0./0);
+          for(int i=1;i<=100;i++){
+              if(i%15==0){
+                 System.out.println("Fifteen");
+                 continue;
+              } else if(i%5==0){
+                  System.out.println("Fif ");
+              }
+              else if(i%3==0){
+                  System.out.println("tree");
+                                 }
+                                 else
+                  System.out.println(i);
+
+          }
 
     }
 

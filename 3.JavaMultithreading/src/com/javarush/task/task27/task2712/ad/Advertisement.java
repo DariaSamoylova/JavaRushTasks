@@ -5,7 +5,7 @@ import java.util.Comparator;
 /**
  * Created by mr_ma on 25.05.2018.
  */
-public class Advertisement implements Comparable {
+public class Advertisement  {
  private    Object content;// видео
     private  String name;// имя/название
     private  long initialAmount;// начальная сумма, стоимость рекламы в копейках. Используем long, чтобы избежать проблем с округлением
@@ -27,7 +27,7 @@ public class Advertisement implements Comparable {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        amountPerOneDisplaying = initialAmount/hits;
+        amountPerOneDisplaying =  (hits > 0) ? initialAmount / hits : 0;
     }
 
     public String getName() {
@@ -50,7 +50,7 @@ public class Advertisement implements Comparable {
 
 
 
-    @Override
+   /* @Override
     public int compareTo(Object o) {
         if (this.initialAmount>((Advertisement)o ).initialAmount)
             return -1;
@@ -71,7 +71,7 @@ public class Advertisement implements Comparable {
             }
 
         }
-    }
+    }*/
 }
 /*П2.5. В классе Advertisement создайте метод void revalidate(). Этот метод должен:
 2.5.1. Бросать UnsupportedOperationException, если количество показов не положительное число.

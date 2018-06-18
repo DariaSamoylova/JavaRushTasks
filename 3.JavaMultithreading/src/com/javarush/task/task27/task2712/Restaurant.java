@@ -15,10 +15,15 @@ public class Restaurant {
       Tablet tablet=  new Tablet(5);
 Cook cook = new Cook("povar");
         Waiter waiter = new Waiter();
+
         cook.addObserver(waiter);
         tablet.addObserver(cook);
         tablet.createOrder();
-
+        DirectorTablet directorTablet = new DirectorTablet();
+        directorTablet.printActiveVideoSet();
+        directorTablet.printAdvertisementProfit();
+        directorTablet.printArchivedVideoSet();
+        directorTablet.printCookWorkloading();
     }
  
 }
