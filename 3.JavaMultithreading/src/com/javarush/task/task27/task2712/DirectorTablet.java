@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class DirectorTablet {
 
-    public void printAdvertisementProfit() throws ParseException {
+    public void printAdvertisementProfit()   {
         Map<Date, Long> map = StatisticManager.getInstance().getAmountForAdsPerDay();
 
         List<Date> list = new ArrayList<>(map.keySet());
@@ -25,8 +25,22 @@ public class DirectorTablet {
         System.out.println("Total - "+amount/100);
     }
 
-    public void printCookWorkloading() {
-        
+    public void printCookWorkloading()   {
+        Map<Date,Map<String,Integer>> map = StatisticManager.getInstance().getDurationCookingWorkPerCook();
+        List<Date> list = new ArrayList<>(map.keySet());
+        Collections.sort(list);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+        for (Date d : list) {
+            System.out.println(sdf.format(d)  );
+            Map<String,Integer> tempMap = map.get(d);
+            List<String> list2 = new ArrayList<>(tempMap.keySet());
+            Collections.sort(list2);
+            for (String s : list2) {
+          //  for(Map.Entry<String,Integer> entry:tempMap.entrySet() ){
+                System.out.println(s+" - "+Math.round(tempMap.get(s)/60 )+" min" );
+            }
+            System.out.println();
+        }
     }
 
     public void printActiveVideoSet() {

@@ -60,19 +60,26 @@ public class StatisticManager {
     }
 
 
-    public  Map<Date,Long> getAmountForAdsPerDay() throws ParseException {
+    public  Map<Date,Long> getAmountForAdsPerDay()  {
          Map<Date,Long> resultMap = new HashMap();
         List<EventDataRow>  stor =  statisticStorage.getStorage().get(EventType.SELECTED_VIDEOS);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         for(EventDataRow e:stor){
-            Date tempDate = sdf.parse(sdf.format(e.getDate()));
+            Date tempDate = null;
+            try {
+                tempDate = sdf.parse(sdf.format(e.getDate()));
+            } catch (ParseException e1) {
+                e1.printStackTrace();
+            }
             if (resultMap.containsKey(tempDate)){
-                for(Map.Entry<Date,Long> entry:resultMap.entrySet() ){
+                long am = resultMap.get(tempDate);
+                resultMap.put(tempDate,am+((VideoSelectedEventDataRow)e).getAmount());
+             /*   for(Map.Entry<Date,Long> entry:resultMap.entrySet() ){
                     if (entry.getKey().equals(tempDate)) {
                         long am = entry.getValue();
                         resultMap.put(tempDate,am+((VideoSelectedEventDataRow)e).getAmount());
                     }
-                }
+                }*/
             } else
                 resultMap.put(tempDate, ((VideoSelectedEventDataRow)e).getAmount());
 
@@ -82,28 +89,41 @@ public class StatisticManager {
         return  resultMap;
     }
 
-   /* public  Map<String,Integer> getDurationCookingWorkPerCook() throws ParseException {
-        Map<String,Map<Date,Integer>> resultMap = new HashMap();
+    public  Map<Date,Map<String,Integer>> getDurationCookingWorkPerCook()   {
+        Map<Date,Map<String,Integer>> resultMap = new HashMap();
         List<EventDataRow>  stor =  statisticStorage.getStorage().get(EventType.COOKED_ORDER);
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         for(EventDataRow e:stor){
-          //  Date tempDate = sdf.parse(sdf.format(e.getDate()));
+            Date tempDate = null;
+            try {
+                tempDate = sdf.parse(sdf.format(e.getDate()));
+            } catch (ParseException e1) {
+                e1.printStackTrace();
+            }
             String cookName= ((CookedOrderEventDataRow)e).getCookName();
-            if (resultMap.containsKey(cookName)){
-                for(Map.Entry<String,Integer> entry:resultMap.entrySet() ){
-                    if (entry.getKey().equals(cookName)) {
-                        int am = entry.getValue();
-                        resultMap.put(cookName,am+((CookedOrderEventDataRow)e).getTime());
-                    }
+            int cookTime= ((CookedOrderEventDataRow)e).getTime();
+            if (resultMap.containsKey(tempDate)){
+                Map<String,Integer> newMap = resultMap.get(tempDate);
+                if (newMap.containsKey(cookName)){
+                    int am = newMap.get(cookName);
+                    newMap.put(cookName,am+cookTime);
+
+                } else {
+                    newMap.put(cookName,cookTime);
+
                 }
-            } else
-                resultMap.put(cookName, ((CookedOrderEventDataRow)e).getTime());
+                resultMap.put(tempDate,newMap);
 
+            } else {
+                Map<String,Integer> newMap = new HashMap<>();
+                newMap.put(cookName,cookTime);
+                resultMap.put(tempDate, newMap);
 
+            }
         }
 
         return  resultMap;
-    }*/
+    }
 
 /*2.
 В StatisticManager создай метод (придумать самостоятельно), который из хранилища достанет
