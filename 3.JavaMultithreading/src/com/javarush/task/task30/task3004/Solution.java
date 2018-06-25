@@ -19,7 +19,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String result1 = solution.binaryRepresentationMethod(6);
+         String result1 = solution.binaryRepresentationMethod(6);
         System.out.println(result1);
 
         System.out.println();
@@ -29,16 +29,3 @@ public class Solution {
     }
 
 }
-/*Fork/Join
-1. Создай класс BinaryRepresentationTask. Для этого в IntelliJ IDEA на красном имени класса нажми Alt+Enter -> Create Class ...
-(класс должен наследоваться от RecursiveTask<String>). Параметр конструктора - int x.
-2. Реализуй логику метода compute - число должно переводиться в двоичное представление.
-3. Используй методы fork и join.
-4. Пример функциональной реализации - метод binaryRepresentationMethod.
-
-
-Требования:
-1. Создай класс BinaryRepresentationTask.
-2. В классе BinaryRepresentationTask должен быть переопределен метод compute().
-3. В классе BinaryRepresentationTask в методе compute() используй методы fork() и join().
-4. Метод compute() должен правильно переводить число в двоичную систему счисления.*/
