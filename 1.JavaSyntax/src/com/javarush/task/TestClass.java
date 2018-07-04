@@ -25,7 +25,7 @@ public class TestClass  {
 
           for(int i=1;i<=100;i++){
               if(i%15==0){
-                 System.out.println("Fifteen");
+                 System.out.println("Fifteenyyy");
                  continue;
               } else if(i%5==0){
                   System.out.println("Fif ");
