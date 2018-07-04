@@ -13,7 +13,7 @@ public class Solution implements Action {
         //!!!!! Изменения могут быть тут
 
 
-       /*     public void someAction() {
+            public void someAction() {
                 if (param > 0)
                 {
                     while (param != 0)
@@ -36,43 +36,34 @@ public class Solution implements Action {
                 }
             }
         };
-*/
-    //System.out.println(SecondClass.SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.replaceFirst("\\n", "").concat(String.valueOf(param)));
-        public void someAction() {
+   /*     public void someAction() {
             //!!!!! All changes have to be here
             //!!!!! Все изменения должны быть только тут
             //super.someAction();
 //System.out.println(SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.substring(1) + param);
-           // SecondClass s;
-           // FirstClass f;
-
-          if (param>0) {
-                while (param > 0)
+            SecondClass s;
+            if (param>0) {
+                while (param != 0)
                     System.out.println(param--);
                 FirstClass f = new FirstClass() {
                     @Override
                     public Action getDependantAction() {
-                        someAction();
-                        // return new SecondClass();
-                        return null;
+                        super.someAction();
+                        return new SecondClass();
                     }
                 };
 
-            }
-          //  if (param==0)
-          //  {f.getDependantAction();}
-         //   f.getDependantAction().someAction();
+             s=   f.getDependantAction().someAction();
                // System.out.println(param);
-             //else {
-              //  SecondClass s = new SecondClass();
-               //  s.someAction();
+            } //else {
+                SecondClass s = new SecondClass();
+              //  s.someAction();
               //  System.out.println(param);
-              //  System.out.println(s.SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.substring(1) + param);
-       //   System.out.print((SecondClass)(f.getDependantAction()).SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.replaceFirst("\\n", ""));
-            System.out.println(param);
+                System.out.println(s.SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.substring(1) + param);
+          //  }
 
         }
-    };
+    };*/
 
 /*         if (param > 0)
             {
@@ -100,7 +91,6 @@ public class Solution implements Action {
 
     @Override
     public void someAction() {
-        System.out.println("sol");
         solutionAction.someAction();
     }
 

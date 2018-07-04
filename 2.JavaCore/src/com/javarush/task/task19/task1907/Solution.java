@@ -12,12 +12,12 @@ import java.io.InputStreamReader;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
-        String f1 = r.readLine();
+       String f1 = r.readLine();
 
        r.close();
 
 
-      //  String f1 = "c:\\Users\\mr_ma\\Documents\\Даша\\java\\1.txt";
+       //  String f1 = "c:\\Users\\mr_ma\\Documents\\Dasha\\java\\1.txt";
 
 
         FileReader fR = new FileReader(f1);
@@ -28,11 +28,17 @@ public class Solution {
         }
         fR.close();
         int count=0;
-         for(int i=0;i<g.length()-5;i++){
+
+        String[] massiv = g.split("[^A-Za-z]");
+       /*  for(int i=0;i<g.length()-4;i++){
            if (  g.substring(i,i+5).equals("world"))
                count++;
-         }
+         }*/
+        for(int i=0;i<massiv.length;i++){
+            if (  massiv[i].equals("world"))
+                count++;
 
+        }
          System.out.println(count);
     }
 }

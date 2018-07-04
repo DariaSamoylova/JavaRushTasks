@@ -21,9 +21,9 @@ AmigoSet (5)
 Требования:
 1.	В классе AmigoSet должен содержаться private метод writeObject с одним параметром типа ObjectOutputStream.
 2.	В классе AmigoSet должен содержаться private метод readObject с одним параметром типа ObjectInputStream.
-3.	Объект сериализованный с помощью метода writeObject должен быть равен объекту десериализованному с помощью метода readObject.
-4.	В методе writeObject должен быть вызван метод defaultWriteObject на объекте типа ObjectOutputStream полученном в качестве параметра.
-5.	В методе readObject должен быть вызван метод defaultReadObject на объекте типа ObjectInputStream полученном в качестве параметра.
+3.	В методе writeObject должен быть вызван метод defaultWriteObject на объекте типа ObjectOutputStream полученном в качестве параметра.
+4.	В методе readObject должен быть вызван метод defaultReadObject на объекте типа ObjectInputStream полученном в качестве параметра.
+5.	Объект сериализованный с помощью метода writeObject должен быть равен объекту десериализованному с помощью метода readObject.
 
 
 AmigoSet (4)

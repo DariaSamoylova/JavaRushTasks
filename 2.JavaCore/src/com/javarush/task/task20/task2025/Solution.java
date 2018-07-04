@@ -2,7 +2,6 @@ package com.javarush.task.task20.task2025;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 /*
 Алгоритмы-числа
@@ -27,9 +26,6 @@ public class Solution {
             result[j]=arrayList.get(j);
         }
         return result;*/
-
-
-
         long[] result = null;
         LinkedList<Long> list = new LinkedList<>();
 
@@ -82,7 +78,7 @@ public class Solution {
 //}
 
       //  System.out.print(Long.MAX_VALUE);
-         getNumbers(Long.MAX_VALUE);
+     //   getNumbers(Long.MAX_VALUE);
     }
 }
 /*Число S состоит из M цифр, например, S=370 и M (количество цифр) = 3

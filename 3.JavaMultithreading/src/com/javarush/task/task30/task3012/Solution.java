@@ -7,8 +7,8 @@ package com.javarush.task.task30.task3012;
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        //solution.createExpression(74);
-        solution.createExpression(1234);
+         solution.createExpression(74);
+      //  solution.createExpression(1234);
 
 
        // System.out.println(Integer.toString(74, 3));//2202
@@ -18,7 +18,7 @@ public class Solution {
     public void createExpression(int number) {
         //напишите тут ваш код
         StringBuilder result = new StringBuilder();
-     StringBuilder numberString3= new StringBuilder(  Integer.toString(number, 3));
+     StringBuilder numberString3= new StringBuilder(  Integer.toString(number, 3));//1200201
         String numberString3Reverse = numberString3.reverse().toString();
         boolean plusOdin=false;
          for(int i=0;i<numberString3.length();i++){
@@ -31,22 +31,25 @@ public class Solution {
              }
             if (c==2){
 
-                result.append("-").append((int)Math.pow(3,i));
+                result.append(" - ").append((int)Math.pow(3,i));
                 plusOdin=true;
+                if (i==numberString3.length()-1){
+                    result.append(" + ").append((int)Math.pow(3,i+1));
+                }
             }
              if (c==0) {
                //  result.append("+0");
                  if (plusOdin){
-                     result.append("+").append((int)Math.pow(3,i+1));
+                     result.append(" + ").append((int)Math.pow(3,i+1));
                  }
                  plusOdin=false;
              }
              if (c==1) {
-                 result.append("+").append((int) Math.pow(3, i));
+                 result.append(" + ").append((int) Math.pow(3, i));
                  plusOdin=false;
              }
          }
-         System.out.println(result);
+         System.out.println(number+" = "+result);
     }
 }
 /*Получи заданное число

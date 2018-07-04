@@ -165,7 +165,7 @@ public class CustomTree extends AbstractList<String> implements Cloneable,Serial
               continue;
           }
           else if  (!upperElem.availableToAddLeftChildren&&!upperElem.availableToAddRightChildren){
-              allDeletedElem.add(upperElem.rightChild);
+            //  allDeletedElem.add(upperElem.rightChild);
               allDeletedElem.add(upperElem.leftChild);
               elemTree.push(upperElem.rightChild);
               upperElem=upperElem.leftChild;

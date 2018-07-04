@@ -71,7 +71,42 @@ public class Solution {
            //     System.out.println("i="+i+", substr="+h_end+", end="+end+", flag = "+flag);
             }
         }
+     /*   String[] stroka = g.split("<"+tag);
+String a;
+       for(int i = 0;i<stroka.length;i++){
+           if (stroka[i].contains("</"+tag)) {
+               System.out.println(stroka[i]);
+           } else {
+               a="";
+               while(true){
 
+                   a = a+ stroka[i];
+                 if  (!stroka[++i].contains("<"+tag)){
+                     System.out.println(a+stroka[i]);
+                     break;
+                 }
+               }
+           }
+       }
+        HashMap<String,Integer> map = new HashMap<>();
+        int pos;
+        while (true){
+            pos = g.indexOf("<"+tag))
+        }
+        String stroka="";*/
+        //  if (g.indexOf("<"+tag)!=0)
+        //     System.
+      /*  while (true){
+            stroka=g.substring(g.indexOf("<"+tag)+tag.length()+1);
+           if (stroka.indexOf("</"+tag)<stroka.indexOf("<"+tag)){
+               System.out.println("<"+tag+stroka.substring(0,stroka.indexOf("</"+tag)));
+               stroka = stroka.substring(stroka.indexOf("</"+tag+tag.length()+2));
+           } else
+
+
+        }*/
+        // String[] arr = g.split("<span>");
+        //  i
 
     }
 }

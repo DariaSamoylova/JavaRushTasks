@@ -12,8 +12,6 @@ import java.util.regex.Pattern;
 
 /* 
 Замена чисел
-
-код работает верно
 */
 
 public class Solution {

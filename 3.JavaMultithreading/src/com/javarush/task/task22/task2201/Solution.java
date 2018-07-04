@@ -13,8 +13,7 @@ public class Solution {
 
     public static final String FIRST_THREAD_NAME = "1#";
     public static final String SECOND_THREAD_NAME = "2#";
-    TooShortStringFirstThreadException qwe = new TooShortStringFirstThreadException();
-    TooShortStringSecondThreadException qweqwe = new TooShortStringSecondThreadException();
+
     private Thread thread1;
     private Thread thread2;
     private Thread thread3;
@@ -37,20 +36,18 @@ public class Solution {
 
     public synchronized String getPartOfString(String string, String threadName) {
        try{
-
            String result = string.substring(string.indexOf("\t"),string.lastIndexOf("\t"));
 
            return result;
-
-       } catch (StringIndexOutOfBoundsException e){
+       } catch (Exception e){
            if (threadName.equals(Solution.FIRST_THREAD_NAME)){
-              qwe.initCause(e);
+              e.initCause(new TooShortStringFirstThreadException());
 
               throw new TooShortStringFirstThreadException();}
 
            if (threadName.equals(Solution.SECOND_THREAD_NAME)){
 
-               qweqwe.initCause(e);
+               e.initCause(new TooShortStringSecondThreadException());
            throw new TooShortStringSecondThreadException();}
            throw new RuntimeException(e);
        }

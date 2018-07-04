@@ -60,7 +60,7 @@ public class Solution {
                 builder2="";
             }
         }
-       for(String g:data1){
+    /*    for(String g:data1){
             System.out.println(g);
         }
         System.out.println("---");
@@ -68,9 +68,9 @@ public class Solution {
             System.out.println(g);
         }
         System.out.println("---");
+*/
 
-
-       int j=0;
+    /*    int j=0;
         int flag;//=0;same
 
         if (data2.get(0).equals(data1.get(0))) {
@@ -119,9 +119,9 @@ public class Solution {
 
         for(LineItem g:lines){
            System.out.println(g.line+":::"+g.type);
-        }
+        }*/
 
-     /*   lines.add(new LineItem(Type.SAME,"строка1"));
+        lines.add(new LineItem(Type.SAME,"строка1"));
         lines.add(new LineItem(Type.REMOVED,"строка2"));
         lines.add(new LineItem(Type.SAME,"строка3"));
         lines.add(new LineItem(Type.REMOVED,"строка4"));
@@ -132,7 +132,7 @@ public class Solution {
         lines.add(new LineItem(Type.SAME,"строка3"));
         lines.add(new LineItem(Type.ADDED,"строка5"));
         lines.add(new LineItem(Type.SAME,"строка4"));
-        lines.add(new LineItem(Type.REMOVED,"строка5"));*/
+        lines.add(new LineItem(Type.REMOVED,"строка5"));
 
 
     }
